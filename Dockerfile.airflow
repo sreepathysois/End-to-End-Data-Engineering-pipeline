@@ -1,0 +1,15 @@
+# Dockerfile.airflow
+FROM apache/airflow:2.9.2
+
+# Switch to root to install packages
+USER root
+
+# Install Java
+RUN apt-get update && apt-get install -y openjdk-17-jdk && rm -rf /var/lib/apt/lists/*
+
+# Set JAVA_HOME
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
+
+# Switch back to airflow user
+USER airflow
