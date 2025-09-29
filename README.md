@@ -23,9 +23,9 @@ This project demonstrates end-to-end Data Engineering pipelines using both Batch
 
 ## Stack Set-up installation
 
-* git clone https://github.com/sreepathysois/End-to-End-Data-Engineering-pipeline.git
-* cd End-to-End-Data-Engineering-pipeline
-* sudo docker-compose up --build -d
+<pre>git clone https://github.com/sreepathysois/End-to-End-Data-Engineering-pipeline.git
+cd End-to-End-Data-Engineering-pipeline
+sudo docker-compose up --build -d </pre>
 
 This setup all services: 
 
@@ -50,14 +50,14 @@ This setup all services:
 
 Check that all containers are running (Airflow webserver, scheduler, workers, Spark master, Spark workers, Kafka, Zookeeper, MinIO, Postgres):
 
-* docker ps  
+<pre>docker ps </pre>
 
 #### Install PySpark 4.0.0 in Airflow Worker
 
 Make the Airflow worker compatible with Spark 4.0.0:
 
-* docker exec -it <airflow-worker-container> bash
-* pip install pyspark==4.0.0  
+<pre>docker exec -it airflow-worker-container bash
+pip install pyspark==4.0.0  </pre>
 
 #### Download Required JARs
 
