@@ -119,44 +119,44 @@ To prepare the Retail Database (RetailDB) for batch data engineering, follow the
 
 Install MySQL server on your remote machine (Linux example): 
 
-* sudo apt update
-* sudo apt install mysql-server -y
-* sudo systemctl enable mysql
-* sudo systemctl start mysql
+<pre>sudo apt update
+sudo apt install mysql-server -y
+sudo systemctl enable mysql
+sudo systemctl start mysql </pre>
 
 #### Login to MySQL
 
 Connect to the MySQL server: 
 
-* mysql -u root -p
+<pre>mysql -u root -p </pre>
 
 #### Create Database
 
 Inside the MySQL shell:
 
-* CREATE DATABASE retaildb;
+<pre>CREATE DATABASE retaildb;</pre>
 
 #### Create User with Privileges
 
 Create a new user cdc with password msis@123 and grant full access to the retaildb database:
 
-* CREATE USER 'cdc'@'%' IDENTIFIED BY 'msis@123';
-* GRANT ALL PRIVILEGES ON retaildb.* TO 'cdc'@'%';
-* FLUSH PRIVILEGES;
+<pre>CREATE USER 'cdc'@'%' IDENTIFIED BY 'msis@123';
+GRANT ALL PRIVILEGES ON retaildb.* TO 'cdc'@'%';
+FLUSH PRIVILEGES;</pre>
 
 #### Import RetailDB Schema and Data
 
 Exit MySQL and load the provided retaildb.sql file into the database:
 
-* mysql -u cdc -p retaildb < /path/to/retaildb.sql
+<pre>mysql -u cdc -p retaildb < /path/to/retaildb.sql </pre>
 
 #### Verify Data
 
 Check if tables are loaded correctly:
 
-* USE retaildb;
-* SHOW TABLES;
-* SELECT COUNT(*) FROM orders;
+<pre>USE retaildb;
+SHOW TABLES;
+SELECT COUNT(*) FROM orders;</pre>  
 
 
 ✅ Now the RetailDB is ready for use in batch data engineering pipelines.
