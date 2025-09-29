@@ -1,4 +1,4 @@
-#Data Engineering Project – Batch & Streaming Pipelines
+#  Data Engineering Project – Batch & Streaming Pipelines
 
 This project demonstrates end-to-end Data Engineering pipelines using both Batch and Streaming approaches. It covers:
 
