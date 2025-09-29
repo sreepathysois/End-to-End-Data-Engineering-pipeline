@@ -209,9 +209,106 @@ SELECT COUNT(*) FROM orders;</pre>
  
 ## Batch Data Engineering (RetailDB) 
 
-### Using Pandas
+### Using Pandas 
 
+#### Scenario 1: Ingest sample data from local files system into MinIo storage and PostgresSQL
+
+**Running ETL DAG: MinIO → Postgres**
+
+We will create a new Airflow DAG (etl_minio_postgres.py) inside the dags/ folder to perform an ETL pipeline:
+
+- Extract: Load data from MinIO (raw-data bucket, CSV file)
+
+- Transform: Parse and clean data with Spark
+
+- Load: Insert processed data into Postgres
+
+1️⃣ Create Sample Data
+
+You can use either a small dataset in CSV format or generate it inside your DAG.
+Example dataset:
+
+
+| id |   name  | amount|
+|-----|---------|------|
+|  1|  Alice  |   100 |
+|  2|  Bob    |   200 |
+|  3| Charlie |   300 |
+
+
+Save this as sample_data.csv and upload it into the MinIO bucket (raw-data).
+
+2️⃣ MinIO Setup
+
+Access MinIO Console: [http://localhost:9000] (http://localhost:9000)
+
+Credentials:
+
+**Username: minio**
+
+**Password: minio123**
+
+Create a new bucket named: raw-data
+
+Upload sample_data.csv into raw-data/
+
+3️⃣ Create Airflow DAG
+
+Inside the dags/ folder, create a file named etl_minio_postgres.py.
+This DAG should:
+
+Read the CSV from MinIO
+
+Transform using PySpark (or Pandas if lightweight)
+
+Write results into Postgres
+
+Example skeleton:
+
+<pre>from airflow import DAG
+from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
+from datetime import datetime
+
+default_args = {"owner": "airflow", "retries": 1}
+
+with DAG(
+    dag_id="etl_minio_postgres",
+    start_date=datetime(2025, 1, 1),
+    schedule_interval=None,  # run on demand
+    catchup=False,
+    default_args=default_args,
+) as dag:
+
+    etl_task = SparkSubmitOperator(
+        task_id="minio_to_postgres",
+        application="/opt/airflow/spark-jobs/etl_minio_postgres.py",
+        conn_id="spark_default",
+        conf={"spark.master": "spark://spark-master:7077"},
+        executor_memory="1g",
+        total_executor_cores=1,
+        name="etl_minio_postgres",
+        verbose=True,
+    )</pre>
+
+4️⃣ Run the DAG
+
+Access Airflow Webserver: [http://localhost:8082] (http://localhost:8082)
+
+Login with:
+
+**Username: admin**
+
+**Password: admin**
+
+Enable and trigger the DAG: etl_minio_postgres
+
+Monitor the task logs to verify data is loaded into Postgres
+
+✅ At the end, your ETL pipeline will move data from MinIO → into Postgres with Airflow + Spark.
   
 
+##### Validate DAG run succesfully 
 
+* Check minio bucker raw-data for data ingestion.
+* Also check Postgresql for table  transactions using psql
 
