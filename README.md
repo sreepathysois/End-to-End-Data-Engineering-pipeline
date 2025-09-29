@@ -19,7 +19,7 @@ This project demonstrates end-to-end Data Engineering pipelines using both Batch
 | **OpenWeather API** | Source for real-time weather data                                       |
 | **Docker Compose**  | Containerized setup for Spark, Kafka, MinIO, Airflow, Postgres          |
 | **Metabase**        | Business Intelligence Tool                                              |
-|**Jupyter Notebook   | Environment for EDA and Machine learning workloads                      |
+|**Jupyter Notebook**  | Environment for EDA and Machine learning workloads                      |
 
 ## Stack Set-up installation
 
@@ -46,20 +46,20 @@ This setup all services:
 
 ## Post installation steps   
 
-1. Verify Containers
+#### Verify Containers
 
 Check that all containers are running (Airflow webserver, scheduler, workers, Spark master, Spark workers, Kafka, Zookeeper, MinIO, Postgres):
 
 * docker ps  
 
-2. Install PySpark 4.0.0 in Airflow Worker
+#### Install PySpark 4.0.0 in Airflow Worker
 
 Make the Airflow worker compatible with Spark 4.0.0:
 
 * docker exec -it <airflow-worker-container> bash
 * pip install pyspark==4.0.0  
 
-3. Download Required JARs
+#### Download Required JARs
 
 Download the following JARs and keep them in a local folder named jars/:
 
@@ -93,16 +93,16 @@ Your folder structure should look like:
 
 
 
-4. Copy JARs into Spark Master and Workers
+#### Copy JARs into Spark Master and Workers
 
 Use docker cp to copy the JARs into /opt/bitnami/spark/jars/ inside the Spark containers:
 
-### Copy jars into Spark Master
+##### Copy jars into Spark Master
 <pre> for jar in jars/*.jar; do
   docker cp $jar spark-master:/opt/bitnami/spark/jars/
 done </pre>
 
-### Copy jars into Spark Worker(s)
+##### Copy jars into Spark Worker(s)
 <pre>for jar in jars/*.jar; do
   docker cp $jar spark-worker-1:/opt/bitnami/spark/jars/
   docker cp $jar spark-worker-2:/opt/bitnami/spark/jars/
