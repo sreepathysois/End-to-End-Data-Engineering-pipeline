@@ -50,14 +50,14 @@ This setup all services:
 
 Check that all containers are running (Airflow webserver, scheduler, workers, Spark master, Spark workers, Kafka, Zookeeper, MinIO, Postgres):
 
-docker ps  
+* docker ps  
 
 2. Install PySpark 4.0.0 in Airflow Worker
 
 Make the Airflow worker compatible with Spark 4.0.0:
 
-docker exec -it <airflow-worker-container> bash
-pip install pyspark==4.0.0  
+* docker exec -it <airflow-worker-container> bash
+* pip install pyspark==4.0.0  
 
 3. Download Required JARs
 
