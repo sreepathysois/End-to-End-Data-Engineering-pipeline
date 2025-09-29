@@ -204,6 +204,7 @@ SELECT COUNT(*) FROM orders;</pre>
 
 #### System Architecture  
 
+<img width="1400" height="823" alt="image" src="https://github.com/user-attachments/assets/099a7985-66a2-4a7d-8e5a-eb30a7906f0c" />
 
  
 ## Batch Data Engineering (RetailDB) 
