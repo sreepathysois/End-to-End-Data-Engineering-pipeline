@@ -161,6 +161,51 @@ SELECT COUNT(*) FROM orders;</pre>
 
 ✅ Now the RetailDB is ready for use in batch data engineering pipelines.
 
+
+## Project Folders objective and Overview  
+
+<pre>.
+├── dags/                     # Airflow DAGs (workflow definitions)
+├── ivy2/                     # Local Ivy cache for Spark/Scala dependencies
+├── jars/                     # Extra JARs required for Spark jobs (Kafka, JDBC, AWS, etc.)
+├── logs/                     # Airflow logs (scheduler, workers, webserver)
+├── metabase-data/            # Metabase metadata storage
+│   └── metabase.db           # SQLite database used by Metabase
+├── minio-data/               # MinIO object storage data
+│   └── raw-data/sample_data.csv  # Sample dataset stored in MinIO
+├── notebooks/                # Jupyter/Databricks notebooks for experimentation
+├── plugins/                  # Custom Airflow plugins/operators/hooks
+├── spark-jars/               # Spark runtime JARs
+├── spark-jobs/               # PySpark job scripts (batch & streaming pipelines)
+├── Dockerfile.airflow        # Custom Dockerfile for Airflow with extra dependencies
+├── docker-compose.yml        # Compose file to spin up all services
+└── README.md                 # Project documentation
+</pre>
+
+### Objectives and Overview of Key Folders
+
+
+| Folder/File          | Purpose                                                    |
+| -------------------- | ---------------------------------------------------------- |
+| `dags/`              | Airflow DAGs to orchestrate Spark jobs (batch & streaming) |
+| `ivy2/`              | Local Ivy cache for Spark/Scala dependencies               |
+| `jars/`              | External JARs: Kafka, JDBC drivers, Hadoop-AWS, etc.       |
+| `logs/`              | Airflow logs for scheduler, workers, and webserver         |
+| `metabase-data/`     | Metabase metadata and dashboards                           |
+| `minio-data/`        | Persistent storage for MinIO (raw datasets)                |
+| `notebooks/`         | Jupyter/Databricks notebooks for exploration               |
+| `plugins/`           | Custom Airflow plugins/operators/hooks                     |
+| `spark-jars/`        | Spark runtime JARs                                         |
+| `spark-jobs/`        | PySpark jobs (Kafka ingestion, batch/stream processing)    |
+| `Dockerfile.airflow` | Custom Airflow image with Spark & dependencies             |
+| `docker-compose.yml` | Orchestrates the complete environment                      |
+| `README.md`          | Project documentation                                      |
+
+
+#### System Architecture  
+
+
+ 
 ## Batch Data Engineering (RetailDB) 
 
 ### Using Pandas
