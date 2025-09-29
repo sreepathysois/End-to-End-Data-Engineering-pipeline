@@ -50,7 +50,24 @@ This setup all services:
 
 Check that all containers are running (Airflow webserver, scheduler, workers, Spark master, Spark workers, Kafka, Zookeeper, MinIO, Postgres):
 
-<pre>docker ps </pre>
+<pre>docker ps </pre>  
+
+|CONTAINER ID | IMAGE | COMMAND | CREATED | STATUS | PORTS | NAMES|
+|-------------|-------|---------|---------|--------|--------|-----|
+|4dfe3f8cf88c | provectuslabs/kafka-ui:latest | "/bin/sh -c 'java --…" | 2 days ago | Up 2 days | 0.0.0.0:8083->8080/tcp, [::]:8083->8080/tcp | kafka-ui
+2d3e57dfd1e8 | bitnami/spark:latest | "/opt/bitnami/script…" | 2 days ago | Up 2 days |  | spark-worker
+970277d94f45 | data-pipeline_airflow-worker | "/usr/bin/dumb-init …" | 2 days ago | Up 2 days | 8080/tcp | data-pipeline_airflow-worker_1
+928d364a5a74 | data-pipeline_airflow-webserver | "/usr/bin/dumb-init …" | 2 days ago | Up 2 days | 0.0.0.0:8082->8080/tcp, [::]:8082->8080/tcp | data-pipeline_airflow-webserver_1
+4805822c5e07 | data-pipeline_airflow-scheduler | "/usr/bin/dumb-init …" | 2 days ago | Up 2 days | 8080/tcp | data-pipeline_airflow-scheduler_1
+fd968390225e | metabase/metabase:latest | "/app/run_metabase.sh" | 2 days ago | Up 2 days | 0.0.0.0:3000->3000/tcp, :::3000->3000/tcp | metabase
+7f078e29c933 | bitnami/kafka:3.6.1 | "/opt/bitnami/script…" | 2 days ago | Up 2 days | 0.0.0.0:9092->9092/tcp, :::9092->9092/tcp | kafka
+711469ce8b84 | redis:latest | "docker-entrypoint.s…" | 2 days ago | Up 2 days | 0.0.0.0:6379->6379/tcp, :::6379->6379/tcp | data-pipeline_redis_1
+b7bdcb119a78 | jupyter/base-notebook:latest | "tini -g -- start-no…" | 2 days ago | Up 2 days (healthy) | 0.0.0.0:8888->8888/tcp, :::8888->8888/tcp | jupyter
+1e5128e93893 | bitnami/zookeeper:3.8.4 | "/opt/bitnami/script…" | 2 days ago | Up 2 days | 2888/tcp, 3888/tcp, 0.0.0.0:2181->2181/tcp, :::2181->2181/tcp, 8080/tcp | zookeeper
+4194a1866b54 | minio/minio | "/usr/bin/docker-ent…" | 2 days ago | Up 2 days | 0.0.0.0:9000-9001->9000-9001/tcp, :::9000-9001->9000-9001/tcp | data-pipeline_minio_1
+cad8003bf693 | postgres:14 | "docker-entrypoint.s…" | 2 days ago | Up 2 days | 0.0.0.0:5432->5432/tcp, :::5432->5432/tcp | data-pipeline_postgres_1
+001a81c28501 | bitnami/spark:latest | "/opt/bitnami/script…" | 2 days ago | Up 2 days | 0.0.0.0:7077->7077/tcp, :::7077->7077/tcp, 0.0.0.0:8085->8080/tcp, [::]:8085->8080/tcp, 0.0.0.0:8084->8081/tcp, [::]:8084->8081/tcp | spark-master
+
 
 #### Install PySpark 4.0.0 in Airflow Worker
 
