@@ -328,4 +328,6 @@ Monitor the task logs to verify data is loaded into Postgres
 
 * Check minio bucker raw-data for data ingestion.
 * Also check Postgresql for table  transactions using psql
+  <pre>sudo docker exec -it data-pipeline_postgres_1 psql -U airflow -d airflow 
+  /dt;</pre>
 
