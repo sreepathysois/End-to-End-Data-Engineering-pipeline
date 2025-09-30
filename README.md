@@ -113,9 +113,9 @@ pip install pyspark==4.0.0  </pre>
 
 Download the following JARs and keep them in a local folder named jars/:
 
-* spark-sql-kafka-0-10_2.13-4.0.0.jar
+* spark-sql-kafka-0-10_2.13-4.0.0.jar [https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.13/4.0.0/] (https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.13/4.0.0/)
 
-* spark-token-provider-kafka-0-10_2.13-4.0.0.jar
+* spark-token-provider-kafka-0-10_2.13-4.0.0.jar 
 
 * kafka-clients-3.6.0.jar
 
