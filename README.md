@@ -6,6 +6,39 @@ This project demonstrates end-to-end Data Engineering pipelines using both Batch
 
 * Real-time streaming processing of Weather data (using Kafka, Spark Structured Streaming, MinIO, and Postgres)
 
+## Use-Case Sneraios
+
+### Batch Data engineering 
+
+In this project, we are implementing both batch processing and real-time streaming processing to handle different data needs. For the batch pipeline, we use the retaildb dataset from MySQL as the source. A scheduled ETL job extracts the raw data, cleans and transforms it into a standardized structure, and then stores the processed data in MinIO buckets. First, the data is stored as Silver tables, which contain cleaned and conformed data but still relatively detailed. From these Silver tables, additional business rules and aggregations are applied to produce Gold tables, which are curated, aggregated, and business-ready datasets. These Gold tables are stored in both MinIO (in the gold bucket) and Postgres for BI tools like Metabase to directly consume. For example, a Silver table may contain all detailed transactions from the orders table with cleaned product and customer details, while the corresponding Gold table could summarize total sales per region or per product category, ready for dashboards and reporting.  
+
+- Source data comes from the **RetailDB** MySQL database.  
+- A scheduled ETL job extracts the data, cleans and transforms it, and loads it into **MinIO buckets**.  
+- The workflow produces two layers of data:  
+  - **Silver tables** → contain cleaned and standardized data, still detailed.  
+  - **Gold tables** → contain aggregated, business-ready datasets.  
+- Both Silver and Gold tables are stored in MinIO (e.g., `silver` and `gold` buckets) and in **Postgres** for BI consumption.  
+- Example:  
+  - A Silver table might include all transactions from the `orders` table with cleaned product and customer details.  
+  - A Gold table could summarize **total sales per region or per product category**, optimized for dashboards.  
+- These Gold datasets are then used by BI tools like **Metabase** to provide insights for business stakeholders.  
+
+
+### Real-time stream data processing
+
+On the real-time streaming side, data is ingested from the OpenWeather API into a Kafka topic called weather. A streaming job processes micro-batches of 5 minutes, writing the raw data to a MinIO bucket. Another stream processing job continuously aggregates these records into 5-minute rolling averages of temperature and humidity per city, creating a real-time view of current weather metrics. Additionally, a batch job runs daily to calculate the average daily temperature and humidity per city, which is stored in Postgres as the weather_bt table. These batch and streaming outputs together allow the system to provide both historical analytics and real-time dashboards in Metabase, enabling business users to explore long-term trends as well as up-to-the-minute conditions.  
+
+- Weather data is continuously ingested from the **OpenWeather API** into a Kafka topic called `weather`.  
+- A **stream processing job** consumes this data in **5-minute micro-batches**, storing it in a MinIO bucket.  
+- Another streaming job calculates **rolling averages** (temperature and humidity) per city for the last 5 minutes, creating a **real-time view** of current conditions.  
+- In parallel, a **daily batch job** aggregates the data into average daily metrics and stores them in Postgres as the `weather_bt` table.  
+- Both real-time and daily aggregated datasets are used to power **live dashboards in Metabase**, showing both up-to-the-minute conditions and long-term trends.  
+
+### Why Silver and Gold Tables?  
+- **Silver Tables**: Cleaned and standardized datasets that serve as the *single source of truth*. Example: detailed customer orders with corrected product IDs and normalized columns.  
+- **Gold Tables**: Business-level, aggregated, and curated datasets designed for analytics and reporting. Example: daily sales revenue per region or average daily temperature per city.  
+
+ 
 ## Tech Stack 
 | Component           | Purpose                                                                 |
 | ------------------- | ----------------------------------------------------------------------- |
@@ -329,5 +362,117 @@ Monitor the task logs to verify data is loaded into Postgres
 * Check minio bucker raw-data for data ingestion.
 * Also check Postgresql for table  transactions using psql
   <pre>sudo docker exec -it data-pipeline_postgres_1 psql -U airflow -d airflow 
-  /dt;</pre>
+  /dt;</pre>  
+
+---------------------------------------------------------------------------
+
+## Scenario 2: Ingest retaildb from remote mysql server in to  MinIo storage and PostgresSQL - Complete ETL Process. 
+
+### DAGs Implemented  
+The following Airflow DAGs orchestrate the batch ETL process:  
+
+1. **`ingest-retail-data-mysql.py`**  
+   - Extracts raw data from the RetailDB MySQL database.  
+   - Stores the ingested files into the **`raw-retail-data`** bucket in MinIO.  
+
+2. **`retail-silver-data-etl.py`**  
+   - Cleans and transforms raw data into the **Silver layer**.  
+   - Processed datasets are stored in the **`silver-retail-data`** bucket in MinIO.  
+   - Example Silver tables created:  
+     - `customer_dim`  
+     - `category_dim`  
+     - `product_dim`  
+     - `orders_fact`  
+     - `department_dim`  
+
+3. **`retail-gold-data-etl.py`**  
+   - Aggregates Silver data into **business-ready Gold datasets**.  
+   - Stores results in the **`gold-retail-data`** bucket in MinIO.  
+   - Example Gold tables created:  
+     - `orders_time_series`  
+     - `sales_by_customer`  
+     - `sales_by_department`  
+     - `sales_by_product`  
+
+4. **`load-silver-gold-retail-postgres.py`**  
+   - Loads both **Silver** and **Gold** datasets from MinIO into **Postgres** for analytics.  
+   - Makes datasets available for BI tools such as **Metabase**.  
+
+---
+
+### MinIO Buckets  
+The following buckets are created to organize the ETL outputs:  
+- **`raw-retail-data`** → Direct extracts from MySQL (unprocessed).  
+- **`silver-retail-data`** → Cleaned, conformed, and structured datasets.  
+- **`gold-retail-data`** → Aggregated, curated, and analytics-ready datasets.  
+
+---
+
+### Workflow Summary  
+1. Extract data from **MySQL → MinIO raw bucket**.  
+2. Transform raw → Silver datasets using Pandas (data cleaning, normalization, standardization).  
+3. Aggregate Silver → Gold datasets (business-level metrics).  
+4. Load Silver & Gold datasets into **Postgres** for analytics and BI dashboards.  
+
+---
+
+### Example  
+- A **Silver table (`orders_fact`)** stores cleaned transactional order data.  
+- A **Gold table (`sales_by_department`)** summarizes daily sales revenue across departments, ready for dashboards in **Metabase**.   
+
+## Scenario 3: Spark Jobs for Ingestion of  retaildb from remote mysql server in to  MinIo storage and PostgresSQL - Complete ETL Process.  
+
+### Spark Jobs (`spark-jobs/`)  
+The core transformation logic is implemented as Spark scripts:  
+
+- **`mysql_to_raw_all.py`** → Extracts data from MySQL and stores into MinIO raw bucket.  
+- **`raw_to_silver.py`** → Cleans raw data and produces Silver tables.  
+- **`silver_to_gold.py`** → Aggregates Silver tables into Gold datasets.  
+- **`silver_gold_to_postgres.py`** → Loads Silver and Gold datasets into Postgres.  
+
+---
+
+### Airflow DAGs (`dags/`)  
+Each Spark job is submitted via an Airflow DAG using the `SparkSubmitOperator`.  
+
+1. **`ingest_mysql_to_raw_spark.py`**  
+   - Submits `mysql_to_raw_all.py`.  
+   - On success → **triggers** `process_raw_to_silver.py`.  
+
+2. **`process_raw_to_silver.py`**  
+   - Submits `raw_to_silver.py`.  
+   - On success → **triggers** `process_silver_to_gold.py`.  
+
+3. **`process_silver_to_gold.py`**  
+   - Submits `silver_to_gold.py`.  
+   - On success → **triggers** `silver_gold_postgres_dag.py`.  
+
+4. **`silver_gold_postgres_dag.py`**  
+   - Submits `silver_gold_to_postgres.py`.  
+   - Final stage: loads curated datasets into Postgres.  
+
+---
+
+### Master DAG  
+
+To simplify execution, a **master pipeline DAG** is defined:  
+
+- **`master_raw_silver_gold_retail_spark.py`**  
+   - Orchestrates all the above DAGs in sequence:  
+     `ingest_mysql_to_raw_spark` → `process_raw_to_silver` → `process_silver_to_gold` → `silver_gold_postgres_dag`.  
+
+This ensures the **full batch pipeline** can be executed with a single DAG run.  
+
+---
+
+### Data Flow  
+
+```mermaid
+flowchart TD
+    A[MySQL RetailDB] -->|Extract| B[MinIO Raw Bucket]
+    B -->|Transform| C[MinIO Silver Bucket]
+    C -->|Aggregate| D[MinIO Gold Bucket]
+    D -->|Load| E[Postgres DB]
+    E -->|Visualize| F[Metabase BI]
+
 
