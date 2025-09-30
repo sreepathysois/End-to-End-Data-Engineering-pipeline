@@ -464,6 +464,27 @@ To simplify execution, a **master pipeline DAG** is defined:
 This ensures the **full batch pipeline** can be executed with a single DAG run.  
 
 ---
+### MinIO Buckets  
+The following buckets are created to organize the ETL outputs:  
+- **`spark-raw-retail-data`** → Direct extracts from MySQL (unprocessed).  
+- **`spark-silver-retail-data`** → Cleaned, conformed, and structured datasets.  
+- **`spark-gold-retail-data`** → Aggregated, curated, and analytics-ready datasets.  
+
+---
+
+### Workflow Summary  
+1. Extract data from **MySQL → MinIO raw bucket**.  
+2. Transform raw → Silver datasets using Pandas (data cleaning, normalization, standardization).  
+3. Aggregate Silver → Gold datasets (business-level metrics).  
+4. Load Silver & Gold datasets into **Postgres** for analytics and BI dashboards.  
+
+---
+
+### Example  
+- A **Silver table (`orders_fact`)** stores cleaned transactional order data.  
+- A **Gold table (`sales_by_department`)** summarizes daily sales revenue across departments, ready for dashboards in **Metabase**.  
+
+
 
 ### Data Flow  
 
@@ -474,5 +495,97 @@ flowchart TD
     C -->|Aggregate| D[MinIO Gold Bucket]
     D -->|Load| E[Postgres DB]
     E -->|Visualize| F[Metabase BI]
+```
+---
 
+## Scenario 3: Real-Time Spark Streaming Pipeline (OpenWeather API → Kafka → Spark → MinIO → Postgres)
 
+In this scenario, we build a real-time data engineering pipeline using the OpenWeather API, Kafka, Spark Structured Streaming, MinIO, and Postgres.
+The pipeline ingests weather data every 5 minutes, stores raw and aggregated data in MinIO, and also maintains real-time and batch aggregated views in Postgres.
+
+### Step 1: Create Kafka Topic  
+
+Before running the producer, create a Kafka topic called **`weather`** to hold incoming JSON messages:  
+
+```bash
+docker exec -it kafka kafka-topics.sh \
+  --create --topic weather \
+  --bootstrap-server localhost:9092 \
+  --partitions 3 \
+  --replication-factor 1
+```
+### Step 2: Synthetic Producer DAG
+- **DAG**: `dags/produce_weather_to_kafka.py`
+- Fetches weather data from OpenWeather API every 5 minutes.
+- Converts API responses to JSON format.
+- Publishes JSON messages to Kafka topic **`weather`**.
+- This simulates a **real-time weather data source**.
+
+---
+
+### Step 3: Spark Streaming Jobs and Airflow DAGs
+The Spark jobs are defined under **`spark-jobs/`** and orchestrated via Airflow DAGs in **`dags/`**:
+
+1. **Kafka → Raw Layer**
+   - **Spark Job**: `spark-jobs/kafka_to_raw_once.py`
+   - **DAG**: `dags/dag_kafka_to_raw.py`
+   - Reads from Kafka topic `weather`.
+   - Stores raw JSON events in **MinIO bucket**: `spark-raw-weather-data`.
+
+2. **5-Minute Aggregation (Silver Layer)**
+   - **Spark Job**: `spark-jobs/weather_stream_agg_5min.py`
+   - **DAG**: `dags/dag_stream_5min.py`
+   - Computes **5-minute windowed averages** of temperature and humidity per city.
+   - Stores aggregated results in **MinIO bucket**: `spark-weather-silver-data`.
+   - Inserts results into **Postgres table**: `weather_rt`.
+
+3. **Daily/Hourly Batch Aggregation**
+   - **Spark Job**: `spark-jobs/batch_hourly_weather.py`
+   - **DAG**: `dags/dag_batch_hourly.py`
+   - Computes **daily/hourly averages** from raw weather data.
+   - Stores results in **MinIO bucket**: `spark-weather-silver-data/hourly/`.
+   - Inserts batch views into **Postgres table**: `weather_bt`.
+
+---
+
+### Step 4: MinIO Buckets
+- **Raw Layer (Bronze)**: `spark-raw-weather-data` → stores raw JSON events.
+- **Silver Layer**: `spark-weather-silver-data` → stores 5-min aggregates and hourly/daily batch aggregates.
+- Optional: use separate folders for **realtime** vs **hourly** aggregated data.
+
+---
+
+### Step 5: Postgres Tables
+- **Real-time 5-minute view**: `weather_rt`  
+- **Batch/hourly view**: `weather_bt`  
+- Both tables store **average temperature and humidity per city**, with window start/end timestamps.
+
+---
+
+### Step 6: Airflow Orchestration
+- All Spark streaming and batch jobs are scheduled via **Airflow DAGs**:
+  1. `produce_weather_to_kafka.py` → Produces data every 5 min.
+  2. `dag_kafka_to_raw.py` → Ingests Kafka data to raw MinIO bucket.
+  3. `dag_stream_5min.py` → Computes 5-min aggregates (Silver layer & Postgres `weather_rt`).
+  4. `dag_batch_hourly.py` → Computes daily/hourly aggregates (Silver layer & Postgres `weather_bt`).
+
+---
+
+### Step 7: Data Flow Overview
+
+**Flow of real-time data:**
+
+- OpenWeather API → Kafka topic `weather`
+- Kafka → Spark Streaming → MinIO `spark-raw-weather-data`
+- Spark Streaming (5-min) → MinIO `spark-weather-silver-data` & Postgres `weather_rt`
+- Spark Batch (daily/hourly) → MinIO `spark-weather-silver-data/hourly` & Postgres `weather_bt`
+
+**Postgres tables can be used for visualization** in Metabase or any BI tool.
+
+---
+
+### Highlights
+- **Trigger-based pipeline** ensures real-time data ingestion and aggregation.
+- **MinIO** provides durable storage for raw and aggregated data.
+- **Postgres tables** enable dashboards for **both real-time and historical analytics**.
+- **Airflow DAGs** orchestrate ingestion, streaming, and batch aggregation workflows seamlessly.
