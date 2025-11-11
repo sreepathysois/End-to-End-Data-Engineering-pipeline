@@ -24,6 +24,8 @@ In this project, we are implementing both batch processing and real-time streami
 - These Gold datasets are then used by BI tools like **Metabase** to provide insights for business stakeholders.  
 
 
+
+
 ### Real-time stream data processing
 
 On the real-time streaming side, data is ingested from the OpenWeather API into a Kafka topic called weather. A streaming job processes micro-batches of 5 minutes, writing the raw data to a MinIO bucket. Another stream processing job continuously aggregates these records into 5-minute rolling averages of temperature and humidity per city, creating a real-time view of current weather metrics. Additionally, a batch job runs daily to calculate the average daily temperature and humidity per city, which is stored in Postgres as the weather_bt table. These batch and streaming outputs together allow the system to provide both historical analytics and real-time dashboards in Metabase, enabling business users to explore long-term trends as well as up-to-the-minute conditions.  
