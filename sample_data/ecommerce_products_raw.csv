@@ -1,0 +1,151 @@
+product_id,product_name,category,subcategory,price,currency,discount_pct,stock_qty,brand,rating,num_reviews,created_at,updated_at,is_active,color,size,material,country_of_origin,seller_id,tmp_notes,internal_flag,extra_col1,extra_col2
+1,Stark Non-fiction 1,Books,Non-fiction,236.23,USD,30,109,Stark,,1418,2024-06-15,2024-07-03,True,,L,Polyester,BR,14,seasonal,TEST,,
+2,Globex Bedding 2,Home & Kitchen,Bedding,327.88,INR,30,168,Globex,,,2024-04-14,2024-05-03,True,Grey,S,Leather,GB,1,clearance,,N/A,NA
+3,Umbrella Outdoor 3,Sports,Outdoor,37.54,EUR,20,350,Umbrella,NA,,2024-03-16,2024-07-24,True,Blue,S,Cotton,GB,18,,,NA,
+4,Soylent Jeans 4,Fashion,Jeans,370.42,EUR,10,228,Soylent,4.9,1960,2024-05-11,2024-08-15,True,White,,,GB,3,clearance,OLD,,
+5,Globex Jacket 5,Fashion,Jacket,264.57,EUR,20,491,Globex,NA,1817,2024-01-01,2024-06-11,True,Black,L,Metal,DE,18,,,,
+6,Umbrella Laptop 6,Electronics,Laptop,176.04,USD,0,206,Umbrella,2.6,1057,2024-04-05,2024-09-22,True,Grey,One Size,Wood,DE,5,,,,
+7,Soylent Furniture 7,Home & Kitchen,Furniture,441.65,EUR,5,498,Soylent,2.6,,2024-12-15,2025-04-06,False,Red,S,Metal,,9,,OLD,,NA
+8,Globex Headphones 8,Electronics,Headphones,347.15,INR,25,408,Globex,3.8,,2024-12-14,2025-01-10,True,Black,,Polyester,CN,6,,,N/A,
+9,Soylent T-Shirt 9,Fashion,T-Shirt,448.61,INR,20,406,Soylent,3.8,,2024-09-01,2024-11-25,True,Blue,S,Cotton,,20,,,NA,
+10,Acme Outdoor 10,Sports,Outdoor,62.63,EUR,30,31,Acme,3.2,,2024-07-21,2024-12-10,True,Red,M,Leather,BR,8,,OLD,N/A,
+11,Wonka Jeans 11,Fashion,Jeans,222.32,USD,5,452,Wonka,2.6,674,2024-04-10,2024-08-22,True,,One Size,Leather,IN,15,,LEGACY,NA,N/A
+12,Wonka Headphones 12,Electronics,Headphones,,INR,15,484,Wonka,3.4,,2024-03-16,2024-06-24,False,White,L,,DE,20,clearance,,N/A,N/A
+13,Umbrella Comics 13,Books,Comics,460.26,USD,20,439,Umbrella,2.6,,2024-01-25,2024-07-21,True,,M,,CN,15,,TEST,,NA
+14,Globex Comics 14,Books,Comics,498.76,EUR,20,346,Globex,,337,2024-09-26,2024-11-24,False,Yellow,M,Wood,IN,12,,,NA,NA
+15,Innotech Shoes 15,Fashion,Shoes,266.91,EUR,5,147,Innotech,NA,,2024-10-24,2025-04-18,True,Green,XL,Metal,FR,6,seasonal,OLD,N/A,
+16,Acme Accessories 16,Sports,Accessories,89.8,INR,25,38,Acme,2.9,,2024-01-05,2024-03-13,False,Black,,,DE,11,seasonal,,,
+17,Soylent Team Sports 17,Sports,Team Sports,288.81,INR,10,146,Soylent,3.6,1352,2024-12-01,2025-03-07,False,Black,M,Cotton,US,14,,,NA,
+18,Wayne Jeans 18,Fashion,Jeans,35.19,INR,15,181,Wayne,4.2,,2024-11-27,2025-02-13,True,,,Polyester,DE,12,seasonal,TEST,,
+19,Wonka Shoes 19,Fashion,Shoes,163.7,INR,0,224,Wonka,NA,,2024-08-02,2024-08-20,False,Yellow,L,Polyester,FR,7,seasonal,,N/A,N/A
+20,Umbrella Education 20,Books,Education,392.65,EUR,10,452,Umbrella,NA,57,2024-10-14,2025-04-03,False,Black,XL,Cotton,IN,10,clearance,OLD,N/A,
+21,Umbrella T-Shirt 21,Fashion,T-Shirt,45.24,USD,10,77,Umbrella,4.3,1439,2024-09-01,2024-11-13,False,Yellow,XL,Wood,GB,14,promo item,,NA,
+22,Globex Decor 22,Home & Kitchen,Decor,212.28,USD,0,115,Globex,NA,1621,2024-09-19,2024-11-30,True,Grey,,Polyester,US,7,,,,NA
+23,Acme Shoes 23,Fashion,Shoes,205.69,INR,15,215,Acme,4.3,,2024-04-05,2024-05-24,True,Blue,S,Plastic,IN,14,seasonal,,,N/A
+24,Globex Decor 24,,Decor,95.05,USD,5,93,Globex,4.3,,2024-11-20,2025-05-22,True,Red,,Polyester,DE,16,,,NA,
+25,Stark Laptop 25,Electronics,Laptop,150.49,INR,25,402,Stark,,1229,2024-01-28,2024-02-06,False,White,,Cotton,IN,5,,,NA,
+26,Globex Team Sports 26,Sports,Team Sports,389.71,USD,25,78,Globex,NA,,2024-04-11,2024-09-03,True,Black,M,,IN,6,,,,
+27,Umbrella Smartwatch 27,Electronics,Smartwatch,180.56,EUR,20,125,Umbrella,NA,693,2024-09-06,2024-11-26,False,Green,,,GB,9,seasonal,,NA,NA
+28,Wayne Bedding 28,Home & Kitchen,Bedding,262.06,USD,20,473,Wayne,NA,573,2024-11-26,2025-04-12,True,White,,Polyester,IN,6,,TEST,N/A,NA
+29,Umbrella Furniture 29,Home & Kitchen,Furniture,394.39,EUR,15,252,Umbrella,,,2024-07-05,2024-08-24,True,Green,XL,Metal,US,8,clearance,,,NA
+30,Wayne Headphones 30,Electronics,Headphones,241.91,INR,10,189,Wayne,,1470,2024-06-05,2024-12-03,False,,L,Leather,US,18,promo item,,NA,N/A
+31,Soylent Furniture 31,Home & Kitchen,Furniture,376.3,EUR,20,130,Soylent,,,2024-09-27,2025-01-23,True,Yellow,L,Leather,CN,19,,,,
+32,Globex Accessories 32,Sports,Accessories,463.45,EUR,10,36,Globex,3.1,665,2024-01-01,2024-07-09,True,White,XL,Cotton,GB,2,seasonal,,NA,
+33,Wayne T-Shirt 33,Fashion,T-Shirt,241.91,EUR,20,446,Wayne,NA,,2024-03-04,2024-08-30,True,Yellow,,Polyester,CN,3,,OLD,,N/A
+34,Stark Accessories 34,Sports,Accessories,162.71,EUR,15,281,Stark,,,2024-11-16,2025-03-28,True,Yellow,,Cotton,,3,promo item,LEGACY,,
+35,Umbrella Outdoor 35,Sports,Outdoor,18.3,USD,20,312,Umbrella,,,2024-10-21,2024-12-16,True,Green,M,Polyester,IN,12,promo item,,,
+36,Globex Cookware 36,Home & Kitchen,Cookware,76.19,INR,30,456,Globex,3.8,,2024-01-22,2024-07-03,True,Yellow,One Size,Plastic,BR,15,seasonal,,,NA
+37,Wonka Laptop 37,Electronics,Laptop,350.32,INR,25,184,Wonka,,,2024-07-09,2024-12-08,True,Blue,,Wood,CN,14,,,NA,N/A
+38,Stark Mobile 38,Electronics,Mobile,402.47,INR,30,385,Stark,NA,,2024-12-14,2025-01-29,True,Green,XL,Wood,IN,18,,OLD,,
+39,Soylent Cookware 39,Home & Kitchen,Cookware,344.5,EUR,20,,Soylent,3.2,286,2024-02-18,2024-08-27,True,Black,,Metal,US,16,clearance,LEGACY,,
+40,Umbrella Comics 40,Books,Comics,175.44,INR,10,247,Umbrella,4.4,888,2024-04-01,2024-06-20,True,Yellow,One Size,,US,11,clearance,,NA,
+41,Soylent Comics 41,Books,Comics,,EUR,20,155,Soylent,NA,,2024-03-04,2024-05-24,False,Red,XL,Cotton,US,17,promo item,TEST,NA,
+42,Stark Bedding 42,Home & Kitchen,Bedding,386.63,USD,10,268,Stark,NA,,2024-04-15,2024-06-06,True,Black,One Size,Leather,FR,14,,TEST,NA,N/A
+43,Wayne Furniture 43,Home & Kitchen,Furniture,29.56,EUR,20,83,Wayne,NA,,2024-05-17,2024-10-16,True,Green,S,,US,8,,LEGACY,,
+44,Stark Education 44,Books,Education,377.14,USD,0,430,Stark,NA,1991,2024-10-12,2025-03-30,True,Green,L,Plastic,BR,4,clearance,TEST,NA,
+45,Umbrella T-Shirt 45,Fashion,T-Shirt,350.2,EUR,25,295,Umbrella,2.6,,2024-03-04,2024-04-21,True,Grey,S,Leather,,17,,,,NA
+46,Wonka Fitness 46,Sports,Fitness,142.5,INR,20,178,Wonka,4.7,1481,2024-07-01,2024-07-13,True,,One Size,Metal,FR,2,seasonal,,,
+47,Globex Smartwatch 47,Electronics,Smartwatch,180.23,USD,15,164,Globex,NA,,2024-12-26,2025-04-06,True,Blue,,Leather,IN,14,,LEGACY,N/A,N/A
+48,Globex Decor 48,Home & Kitchen,Decor,169.1,INR,10,398,Globex,,1794,2024-05-04,2024-05-27,True,Green,,,BR,4,,TEST,,
+49,Umbrella Jeans 49,Fashion,Jeans,244.44,EUR,25,253,Umbrella,NA,,2024-04-07,2024-10-06,True,Black,L,Cotton,DE,12,clearance,,NA,N/A
+50,Wonka Smartwatch 50,Electronics,Smartwatch,350.51,USD,15,14,Wonka,3.0,,2024-05-15,2024-08-07,False,Yellow,,Wood,GB,2,,,N/A,
+51,Stark Smartwatch 51,Electronics,Smartwatch,445.52,USD,30,166,Stark,,563,2024-03-03,2024-03-03,True,Blue,M,Leather,CN,20,promo item,,,
+52,Stark Jacket 52,Fashion,Jacket,150.85,EUR,20,10,Stark,,,2024-09-06,2025-03-01,True,Yellow,S,,US,8,,,N/A,NA
+53,Soylent Team Sports 53,Sports,Team Sports,52.44,EUR,25,92,Soylent,NA,782,2024-01-23,2024-04-10,False,Red,L,,BR,2,,OLD,,
+54,Wayne Shoes 54,Fashion,Shoes,344.41,USD,10,61,Wayne,,1795,2024-10-20,2024-11-14,True,Red,XL,Plastic,DE,4,seasonal,,N/A,
+55,Innotech Fitness 55,Sports,Fitness,210.69,USD,15,122,,,,2024-02-13,2024-08-16,True,Yellow,XL,Plastic,DE,5,seasonal,,N/A,NA
+56,Globex Mobile 56,Electronics,Mobile,373.54,EUR,20,378,Globex,NA,,2024-11-17,2024-11-17,True,Yellow,,Leather,DE,13,clearance,OLD,,N/A
+57,Umbrella Accessories 57,Sports,Accessories,40.93,USD,25,266,Umbrella,NA,1858,2024-12-11,2025-04-28,True,Grey,L,Cotton,DE,17,clearance,TEST,,NA
+58,Stark T-Shirt 58,Fashion,,181.21,EUR,10,148,Stark,3.3,,2024-04-15,2024-10-27,False,Green,XL,Metal,CN,5,,TEST,,
+59,Umbrella Jeans 59,Fashion,Jeans,125.87,INR,20,206,Umbrella,,,2024-05-02,2024-08-19,True,Yellow,M,Metal,CN,3,seasonal,TEST,NA,N/A
+60,Wonka Fiction 60,Books,Fiction,223.35,EUR,25,462,Wonka,NA,1342,2024-08-13,2024-12-03,True,Yellow,One Size,,,13,clearance,,NA,NA
+61,Soylent Jeans 61,Fashion,Jeans,254.47,EUR,30,182,Soylent,4.5,1746,2024-08-18,2024-12-21,True,Green,S,,BR,18,,,NA,
+62,Innotech Cookware 62,Home & Kitchen,Cookware,404.44,USD,30,136,Innotech,NA,,2024-06-10,2024-09-14,True,,XL,Wood,BR,18,seasonal,LEGACY,N/A,NA
+63,Stark Cookware 63,,Cookware,479.44,EUR,20,97,Stark,,1135,2024-12-23,2025-02-28,True,Yellow,One Size,Metal,DE,3,clearance,TEST,NA,
+64,Soylent T-Shirt 64,Fashion,T-Shirt,117.27,INR,15,334,Soylent,4.2,1969,2024-04-22,2024-05-09,True,,M,,IN,15,clearance,OLD,NA,
+65,Soylent Smartwatch 65,Electronics,Smartwatch,175.37,USD,0,492,Soylent,4.8,,2024-06-05,2024-08-28,True,Blue,One Size,Wood,DE,16,promo item,,,N/A
+66,Acme Jeans 66,Fashion,Jeans,162.78,INR,15,443,Acme,NA,,2024-09-11,2025-01-15,False,Green,XL,,IN,19,promo item,,,
+67,Stark Decor 67,Home & Kitchen,Decor,410.17,EUR,10,9,Stark,3.3,584,2024-04-10,2024-06-04,True,,M,Wood,DE,9,,LEGACY,,
+68,Innotech Cookware 68,Home & Kitchen,Cookware,280.24,USD,30,450,Innotech,,,2024-05-19,2024-12-03,False,Black,M,Wood,CN,18,clearance,TEST,,
+69,Wayne Bedding 69,Home & Kitchen,Bedding,76.95,USD,15,136,Wayne,,,2024-04-16,2024-08-06,True,Black,M,Leather,GB,1,seasonal,LEGACY,NA,NA
+70,Acme Non-fiction 70,Books,Non-fiction,122.14,INR,25,381,Acme,NA,,2024-05-14,2024-10-16,True,,L,Cotton,DE,2,seasonal,OLD,,
+71,Umbrella Accessories 71,Sports,Accessories,288.63,USD,10,116,Umbrella,NA,,2024-09-28,2024-12-25,False,White,XL,Plastic,GB,3,promo item,TEST,NA,NA
+72,Wayne Fitness 72,Sports,Fitness,492.61,INR,5,438,Wayne,,,2024-07-23,2024-09-02,True,Yellow,One Size,Metal,BR,2,,LEGACY,N/A,NA
+73,Wayne Jacket 73,Fashion,Jacket,21.67,EUR,15,188,Wayne,,,2024-12-14,2025-01-20,False,Yellow,M,Leather,CN,20,clearance,LEGACY,N/A,N/A
+74,Acme T-Shirt 74,Fashion,T-Shirt,353.32,USD,30,123,Acme,3.2,,2024-07-28,2024-08-05,True,Black,M,Metal,US,14,,TEST,NA,
+75,Stark Fitness 75,Sports,Fitness,11.86,EUR,25,311,Stark,NA,,2024-05-11,2024-10-11,True,Blue,M,Plastic,,13,,LEGACY,,
+76,Soylent Non-fiction 76,Books,Non-fiction,269.38,INR,20,371,Soylent,NA,,2024-05-19,2024-06-09,True,Grey,One Size,Metal,DE,11,,TEST,,
+77,Wayne Smartwatch 77,Electronics,Smartwatch,227.4,EUR,0,213,Wayne,,,2024-09-21,2025-02-23,True,Yellow,M,,US,7,seasonal,,NA,
+78,Globex Non-fiction 78,Books,Non-fiction,64.87,INR,20,393,Globex,NA,161,2024-12-28,2025-02-24,True,Blue,M,Wood,BR,2,,OLD,NA,N/A
+79,Innotech Fiction 79,Books,Fiction,370.26,USD,10,305,Innotech,,,2024-10-11,2024-11-30,True,Red,L,Metal,DE,12,,OLD,,
+80,Wayne Jeans 80,Fashion,Jeans,14.97,EUR,25,64,,4.3,,2024-10-06,2024-10-28,True,Red,S,,US,18,promo item,TEST,,NA
+81,Soylent Fiction 81,Books,Fiction,208.54,USD,10,307,Soylent,,,2024-12-04,2025-02-17,False,White,S,Wood,GB,6,,,,NA
+82,Wonka Jacket 82,Fashion,Jacket,394.39,INR,30,,Wonka,,,2024-04-14,2024-10-07,False,Grey,One Size,,CN,6,clearance,TEST,,N/A
+83,Umbrella Mobile 83,Electronics,Mobile,316.14,INR,30,390,Umbrella,,1162,2024-11-11,2025-02-24,True,Black,L,Cotton,BR,16,seasonal,TEST,NA,
+84,Globex Fitness 84,Sports,Fitness,78.41,EUR,5,43,Globex,NA,301,2024-01-07,2024-03-31,True,Grey,L,Leather,CN,14,,TEST,,
+85,Stark Shoes 85,Fashion,Shoes,370.08,EUR,20,234,Stark,3.1,679,2024-11-17,2025-04-14,True,,One Size,,BR,17,clearance,OLD,NA,N/A
+86,Globex Headphones 86,Electronics,Headphones,140.92,EUR,30,282,Globex,NA,,2024-06-20,2024-12-23,False,Green,XL,Plastic,IN,2,clearance,LEGACY,N/A,N/A
+87,Stark Non-fiction 87,Books,Non-fiction,45.93,EUR,25,191,Stark,,587,2024-01-09,2024-05-31,True,Black,M,Leather,FR,12,,OLD,NA,NA
+88,Innotech Comics 88,Books,Comics,165.11,USD,25,412,Innotech,,,2024-11-26,2025-06-01,False,White,S,Wood,,18,seasonal,LEGACY,,
+89,Innotech Outdoor 89,Sports,Outdoor,304.48,INR,10,322,Innotech,3.8,1803,2024-05-20,2024-10-15,True,Grey,L,Wood,BR,3,,,NA,N/A
+90,Wayne Furniture 90,Home & Kitchen,Furniture,365.75,EUR,30,86,Wayne,NA,1704,2024-12-11,2025-02-15,True,Green,S,Cotton,FR,15,clearance,,,N/A
+91,Soylent Accessories 91,Sports,Accessories,101.05,EUR,25,82,Soylent,,,2024-04-04,2024-10-19,True,Green,M,Cotton,,8,clearance,TEST,N/A,NA
+92,Innotech Fitness 92,Sports,Fitness,59.56,USD,15,242,Innotech,3.8,,2024-03-21,2024-10-07,True,,L,Metal,DE,10,,LEGACY,NA,
+93,Innotech Fitness 93,Sports,Fitness,491.16,INR,10,455,Innotech,NA,,2024-05-05,2024-06-17,False,Red,,Wood,CN,8,,,NA,NA
+94,Stark Comics 94,Books,Comics,201.03,EUR,5,22,Stark,NA,,2024-01-07,2024-05-12,False,Blue,One Size,Leather,GB,11,,LEGACY,N/A,N/A
+95,Umbrella T-Shirt 95,Fashion,T-Shirt,411.87,USD,5,432,Umbrella,4.2,,2024-10-11,2024-11-20,False,Yellow,M,Polyester,GB,17,clearance,,,NA
+96,Umbrella Fitness 96,Sports,Fitness,335.38,EUR,0,329,Umbrella,,368,2024-06-03,2024-08-24,True,Yellow,,Plastic,CN,3,,,NA,
+97,Globex Non-fiction 97,Books,Non-fiction,440.48,USD,10,105,Globex,,893,2024-11-18,2024-12-23,False,White,M,Metal,CN,16,seasonal,TEST,,NA
+98,Innotech Bedding 98,,Bedding,299.7,INR,5,230,Innotech,3.6,,2024-07-19,2024-08-10,True,Green,One Size,Leather,,13,seasonal,,NA,N/A
+99,Innotech Jacket 99,Fashion,Jacket,118.77,EUR,20,476,Innotech,3.5,,2024-09-23,2025-02-20,False,Blue,,Plastic,IN,9,clearance,,N/A,NA
+100,Stark Comics 100,Books,Comics,429.69,EUR,0,158,Stark,4.3,,2024-09-06,2025-03-22,True,Yellow,M,Polyester,BR,9,clearance,LEGACY,,
+101,Globex Non-fiction 101,Books,Non-fiction,155.59,USD,0,155,Globex,NA,512,2024-04-15,2024-10-06,True,White,M,Cotton,BR,17,promo item,,,
+102,Acme Outdoor 102,Sports,Outdoor,128.0,USD,0,377,Acme,NA,1542,2024-06-17,2024-10-08,True,Black,XL,Polyester,FR,11,,TEST,,
+103,Umbrella Non-fiction 103,Books,Non-fiction,,USD,5,149,Umbrella,NA,,2024-05-22,2024-11-22,True,Blue,M,,IN,16,,OLD,,
+104,Innotech Jeans 104,Fashion,Jeans,306.31,INR,30,250,Innotech,5.0,,2024-11-19,2025-03-26,True,Yellow,,,CN,7,promo item,,,NA
+105,Wayne Accessories 105,Sports,Accessories,284.88,EUR,5,250,Wayne,4.5,,2024-02-02,2024-05-14,False,White,XL,Wood,IN,8,,,,NA
+106,Stark Fitness 106,Sports,Fitness,373.73,INR,30,,Stark,,,2024-12-04,2025-04-13,True,,S,Wood,IN,8,promo item,,,
+107,Umbrella Outdoor 107,Sports,Outdoor,364.56,USD,30,358,Umbrella,,,2024-11-22,2025-01-19,True,Grey,S,Cotton,IN,1,,LEGACY,NA,N/A
+108,Soylent Comics 108,Books,,83.24,EUR,30,52,,,,2024-07-04,2024-09-25,False,Green,M,Plastic,,19,,,,
+109,Globex Non-fiction 109,Books,Non-fiction,56.52,USD,25,32,Globex,,50,2024-11-15,2025-03-04,True,Blue,,Plastic,,3,,TEST,NA,
+110,Soylent Headphones 110,Electronics,Headphones,408.25,USD,25,229,Soylent,NA,,2024-07-04,2024-08-30,True,Yellow,L,Leather,GB,7,clearance,TEST,,N/A
+111,Stark Bedding 111,Home & Kitchen,Bedding,341.01,EUR,25,40,Stark,,,2024-02-03,2024-04-12,True,Yellow,,Cotton,GB,19,,LEGACY,N/A,
+112,Umbrella Shoes 112,Fashion,Shoes,386.41,INR,0,199,Umbrella,NA,,2024-06-28,2025-01-03,False,White,L,Plastic,IN,7,,,,
+113,Globex Laptop 113,Electronics,,51.02,INR,30,260,Globex,4.4,,2024-11-26,2025-05-24,True,Yellow,XL,Polyester,BR,1,,OLD,N/A,
+114,Soylent Laptop 114,Electronics,Laptop,,EUR,10,12,Soylent,NA,,2024-12-10,2025-01-11,False,Yellow,L,Wood,GB,7,,,NA,
+115,Innotech Jeans 115,,Jeans,231.96,INR,25,440,Innotech,NA,,2024-02-24,2024-04-09,False,Blue,,Leather,,9,seasonal,OLD,,NA
+116,Globex Jeans 116,Fashion,Jeans,238.82,INR,30,116,Globex,NA,823,2024-09-11,2024-10-12,True,Red,M,Leather,GB,8,,LEGACY,NA,NA
+117,Innotech Smartwatch 117,Electronics,Smartwatch,178.9,EUR,15,441,Innotech,2.6,1306,2024-02-05,2024-02-16,False,Black,L,Polyester,GB,13,promo item,,,
+118,Innotech Education 118,Books,Education,179.88,USD,15,356,Innotech,,1344,2024-06-27,2024-11-28,True,White,L,Cotton,BR,5,,,,
+119,Stark Smartwatch 119,Electronics,Smartwatch,410.82,INR,30,210,Stark,NA,,2024-12-15,2025-04-06,True,,One Size,Leather,BR,3,,,,N/A
+120,Acme Non-fiction 120,Books,Non-fiction,191.16,USD,5,34,Acme,,,2024-06-07,2024-11-18,False,Grey,,Metal,BR,5,,LEGACY,NA,
+121,Wonka Headphones 121,Electronics,Headphones,377.57,EUR,30,377,Wonka,,,2024-05-15,2024-10-15,True,,S,Leather,DE,16,,OLD,,
+122,Globex Shoes 122,Fashion,Shoes,384.34,EUR,10,,,,,2024-10-11,2024-11-23,True,,L,Cotton,GB,19,,OLD,,
+123,Umbrella Shoes 123,Fashion,,82.01,USD,5,192,Umbrella,NA,,2024-02-18,2024-07-25,True,Black,XL,Leather,BR,20,,LEGACY,,
+124,Soylent Jacket 124,Fashion,Jacket,456.64,USD,25,454,Soylent,3.3,,2024-01-05,2024-02-23,True,Green,M,Polyester,BR,18,,OLD,,
+125,Umbrella Bedding 125,Home & Kitchen,Bedding,22.79,EUR,0,,Umbrella,,1895,2024-10-09,2025-04-13,True,Red,S,Cotton,,8,,LEGACY,N/A,
+126,Globex Furniture 126,Home & Kitchen,Furniture,194.39,INR,15,191,Globex,,,2024-10-01,2025-03-29,True,Yellow,M,,FR,7,seasonal,,NA,
+127,Soylent Shoes 127,Fashion,Shoes,340.35,EUR,25,482,Soylent,3.1,,2024-06-13,2024-11-28,True,Yellow,XL,Plastic,IN,10,,,,
+128,Globex Furniture 128,Home & Kitchen,Furniture,264.48,USD,5,332,Globex,,,2024-10-14,2025-03-23,False,Green,L,Leather,BR,14,seasonal,,,NA
+129,Umbrella Smartwatch 129,Electronics,Smartwatch,79.62,USD,0,325,Umbrella,,679,2024-08-21,2024-12-24,True,Yellow,,Polyester,BR,11,,,,NA
+130,Umbrella Fiction 130,Books,Fiction,450.59,EUR,25,302,Umbrella,3.6,,2024-07-17,2024-09-24,True,Grey,L,Leather,FR,12,promo item,OLD,,NA
+131,Soylent Decor 131,Home & Kitchen,Decor,408.62,EUR,30,142,Soylent,NA,1495,2024-10-21,2024-10-26,True,Blue,L,Plastic,IN,16,,,,
+132,Soylent Education 132,Books,Education,168.32,EUR,5,353,Soylent,,,2024-10-21,2025-01-04,True,,XL,Cotton,IN,5,,TEST,NA,
+133,Stark Outdoor 133,Sports,Outdoor,18.18,USD,15,,Stark,3.2,,2024-02-21,2024-08-15,False,Yellow,XL,Metal,US,13,,,NA,NA
+134,Umbrella Non-fiction 134,Books,Non-fiction,13.01,EUR,10,8,Umbrella,NA,1616,2024-11-04,2025-01-01,False,Green,S,Leather,,14,,,,
+135,Umbrella Team Sports 135,Sports,,,USD,30,74,Umbrella,2.7,,2024-11-14,2025-04-25,False,Grey,One Size,Leather,GB,20,,,N/A,N/A
+136,Stark Laptop 136,Electronics,Laptop,205.02,USD,25,464,,4.4,,2024-05-19,2024-07-17,True,Red,S,Metal,US,13,,TEST,N/A,NA
+137,Globex Headphones 137,Electronics,Headphones,,EUR,30,179,Globex,4.3,1154,2024-05-28,2024-11-20,True,White,L,Polyester,IN,20,promo item,OLD,,NA
+138,Acme Mobile 138,Electronics,Mobile,84.93,USD,25,36,Acme,NA,576,2024-01-05,2024-04-13,False,Grey,S,Cotton,CN,16,seasonal,,N/A,N/A
+139,Stark Jeans 139,Fashion,Jeans,144.56,EUR,20,280,Stark,3.9,,2024-08-11,2025-02-08,True,White,S,Leather,DE,10,,TEST,N/A,N/A
+140,Stark Comics 140,Books,Comics,398.94,EUR,30,214,Stark,NA,,2024-10-06,2024-10-21,True,Black,L,Leather,CN,11,,,,
+141,Innotech Mobile 141,Electronics,,429.28,USD,0,42,Innotech,,,2024-07-16,2024-10-23,False,Black,,Cotton,GB,14,,TEST,N/A,
+142,Wonka T-Shirt 142,Fashion,T-Shirt,380.29,INR,20,472,Wonka,NA,,2024-01-09,2024-05-01,False,Yellow,One Size,Leather,US,9,promo item,OLD,,
+143,Umbrella Fiction 143,Books,Fiction,233.58,EUR,10,99,Umbrella,2.5,454,2024-08-18,2024-09-02,True,Black,One Size,,US,3,clearance,,N/A,NA
+144,Acme Outdoor 144,Sports,Outdoor,120.75,USD,15,427,Acme,NA,,2024-05-02,2024-08-03,True,Red,L,Cotton,FR,11,clearance,TEST,,
+145,Innotech Jeans 145,Fashion,Jeans,479.96,INR,10,434,Innotech,,1749,2024-10-19,2024-11-22,False,Blue,M,Cotton,US,13,promo item,,,N/A
+146,Umbrella Decor 146,Home & Kitchen,Decor,244.45,EUR,20,127,Umbrella,NA,,2024-10-20,2025-01-22,True,Green,XL,Polyester,DE,4,,,N/A,
+147,Umbrella Education 147,Books,Education,41.74,USD,5,99,Umbrella,3.0,,2024-12-06,2024-12-24,True,Blue,S,Leather,US,4,promo item,OLD,N/A,N/A
+148,Soylent Shoes 148,Fashion,Shoes,157.38,EUR,20,498,Soylent,3.3,767,2024-07-06,2025-01-04,True,White,S,Polyester,BR,4,promo item,OLD,N/A,N/A
+149,Soylent Shoes 149,Fashion,Shoes,435.75,EUR,5,233,Soylent,3.1,866,2024-12-13,2025-01-06,False,Yellow,M,Plastic,DE,12,,OLD,N/A,N/A
+150,Acme Comics 150,Books,Comics,467.37,INR,0,156,Acme,NA,1569,2024-04-06,2024-06-28,True,Blue,,Plastic,DE,5,,,N/A,
