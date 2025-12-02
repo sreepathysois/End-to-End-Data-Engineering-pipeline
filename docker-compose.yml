@@ -113,7 +113,7 @@ services:
     command: start-notebook.sh
 
   spark-master:
-    image: bitnami/spark:latest
+    image: sreedocker123/spark:4.0.0
     container_name: spark-master
     volumes:
       - ./spark-jobs:/opt/bitnami/spark/jobs
@@ -130,7 +130,7 @@ services:
       - "8085:8080"
 
   spark-worker:
-    image: bitnami/spark:latest
+    image: sreedocker123/spark:4.0.0
     container_name: spark-worker
     volumes:
       - ./jars:/opt/spark/jars
@@ -146,7 +146,7 @@ services:
       - spark-master
 
   zookeeper:
-    image: bitnami/zookeeper:3.8.4
+    image: sreedocker123/zookeeperkafka:3.8.4
     container_name: zookeeper
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
@@ -154,7 +154,7 @@ services:
       - "2181:2181"
 
   kafka:
-    image: bitnami/kafka:3.6.1
+    image: sreedocker123/kafka:3.6.1
     container_name: kafka
     environment:
       - KAFKA_BROKER_ID=1
