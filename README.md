@@ -121,7 +121,7 @@ Download the following JARs and keep them in a local folder named jars/:
 
 * kafka-clients-3.6.0.jar
 
-* bundle-sdk-2.24.6.jar
+* bundle-sdk-2.24.6.jar: wget https://repo1.maven.org/maven2/software/amazon/awssdk/bundle-sdk/2.24.6/bundle-sdk-2.24.6.jar 
 
 * commons-pool2-2.12.0.jar
 
