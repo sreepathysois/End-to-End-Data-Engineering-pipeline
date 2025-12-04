@@ -54,7 +54,13 @@ On the real-time streaming side, data is ingested from the OpenWeather API into 
 | **OpenWeather API** | Source for real-time weather data                                       |
 | **Docker Compose**  | Containerized setup for Spark, Kafka, MinIO, Airflow, Postgres          |
 | **Metabase**        | Business Intelligence Tool                                              |
-|**Jupyter Notebook**  | Environment for EDA and Machine learning workloads                      |
+|**Jupyter Notebook**  | Environment for EDA and Machine learning workloads                      | 
+
+## Install Docker-Compose of Ubuntu
+  
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo docker-compose --version
 
 ## Stack Set-up installation
 
