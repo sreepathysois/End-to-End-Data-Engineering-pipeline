@@ -599,3 +599,31 @@ The Spark jobs are defined under **`spark-jobs/`** and orchestrated via Airflow 
 - **MinIO** provides durable storage for raw and aggregated data.
 - **Postgres tables** enable dashboards for **both real-time and historical analytics**.
 - **Airflow DAGs** orchestrate ingestion, streaming, and batch aggregation workflows seamlessly.
+
+### Sample Metabase Model and Metrics
+
+```bash
+SELECT
+    CAST(product_id AS INTEGER)           AS product_id,
+    product_name                          AS product_name,
+    category                              AS category,
+    subcategory                           AS subcategory,
+    brand                                 AS brand,
+
+    CAST(price AS NUMERIC(10,2))          AS price,
+    CAST(discount_pct AS NUMERIC(5,2))    AS discount_pct,
+    CAST(effective_price AS NUMERIC(10,2)) AS effective_price,
+
+    CAST(stock_qty AS INTEGER)            AS stock_qty,
+    CAST(rating AS NUMERIC(3,2))          AS rating,
+    CAST(num_reviews AS INTEGER)          AS num_reviews,
+    country_of_origin                     AS country_of_origin,
+
+    CAST(seller_id AS INTEGER)            AS seller_id,
+
+    CAST(created_at AS TIMESTAMP)         AS created_at,
+    CAST(updated_at AS TIMESTAMP)         AS updated_at,
+
+    CAST(is_active AS BOOLEAN)            AS is_active
+FROM public.ecom_product_gold;
+```
